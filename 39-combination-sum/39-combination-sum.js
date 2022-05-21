@@ -23,15 +23,17 @@ var combinationSum = function(candidates, target) {
       return;
     }
     if (currentSum === target){
-      output.push(path);
+      const numList = path.split(',');
+      numList.pop();
+      output.push(numList);
       return;
     } else if (currentSum > target){
       return;
     }
-    return (findCombos(choices, [...path, choices[0]], currentSum + choices[0]), findCombos(choices.slice(1), [...path], currentSum))
+    
+    return (findCombos(choices, choices[0]+','+ path, currentSum + choices[0]), findCombos(choices.slice(1), path, currentSum))
     
   }
-  findCombos(candidates, [], 0)
-  console.log(output)
+  findCombos(candidates, '', 0)
   return output;
 };
