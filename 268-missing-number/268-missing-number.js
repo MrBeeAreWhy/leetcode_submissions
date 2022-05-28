@@ -3,11 +3,11 @@
  * @return {number}
  */
 var missingNumber = function(nums) {
-  let sumOfNums = 0;
+  let sumOfNums = (nums.length * (1 + nums.length) / 2);
   
   for (let i = 0; i < nums.length; i++){
-    sumOfNums += nums[i];
+    sumOfNums -= nums[i];
   }
 
-  return (nums.length * (1 + nums.length) / 2) - sumOfNums;
+  return sumOfNums;
 };
