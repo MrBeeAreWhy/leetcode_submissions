@@ -8,8 +8,6 @@ var missingNumber = function(nums) {
   for (let i = 0; i < nums.length; i++){
     sumOfNums += nums[i];
   }
-  
-  const expectedSum = nums.length * (1 + nums.length) / 2;
-  return expectedSum - sumOfNums;
-  
+
+  return (nums.length * (1 + nums.length) / 2) - sumOfNums;
 };
